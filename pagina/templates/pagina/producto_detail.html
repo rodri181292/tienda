@@ -1,0 +1,8 @@
+{% extends 'pagina/base.html' %}
+
+{% block content %}
+    <div class="post" align="center">
+        <h1>{{ producto.nombre}}
+        <p>{{ producto.descripcion|linebreaksbr}}</p>
+    </div>
+{%  endblock %}

@@ -1,0 +1,29 @@
+{% extends 'pagina/base.html' %}    
+
+{% block content %}
+    {% for producto in productos %}
+            <div class="post" align="left">
+         <table border="5" align="center" bordercolor="#CC9933">
+          
+          
+          <tr>
+    <td bgcolor="#0000CC"><div align="center"><font color="#FFFFFF">Juego:</font></div>
+      </td>
+    <td bgcolor="#0000CC"><font color="#FFFFFF">Descripcion</font></td>
+     <td bgcolor="#0000CC"><font color="#FFFFFF">Imagen</font></td>
+      <tr>
+      <td bgcolor="#999999"><div align="center">
+            
+           <h1>{{ producto.nombre }}<a href="{% url 'post_detail' pk=producto.pk %}"><span class="glyphicon glyphicon-search"></a></span></h1><br /></div></td>
+      
+      <td bgcolor="#999999"><div align="center">
+      <p>{{producto.descripcion}}</p>
+      <p><b>Precio:$</b>{{ producto.precio }}</p>
+    </div></td>
+    <td bgcolor="#999999"><div align="center">
+            
+           <img src="{{ producto.imagen }}"></div></td>
+      </table>
+        </div>
+    {% endfor %}
+{% endblock  %}
